@@ -44,6 +44,22 @@ You can deploy this template by setting up the following services and adding the
 6. Make a [Replicate](https://replicate.com) account to get your [API key](https://replicate.com/account/api-tokens).
 7. Save your environment variables in Convex [as `REPLICATE_API_KEY` and `TOGETHER_API_KEY`](https://dashboard.convex.dev/deployment/settings/environment-variables?var=REPLICATE_API_KEY&var=TOGETHER_API_KEY).
 
+## Running with Docker
+
+To build and run the Docker container, follow these steps:
+
+1. Build the Docker image:
+   ```sh
+   docker build -t notes-gpt .
+   ```
+
+2. Run the Docker container:
+   ```sh
+   docker run -d -p 3000:3000 --env-file .env notes-gpt
+   ```
+
+Make sure to create a `.env` file in the root directory of the project with the necessary credentials based on the `.example.env` file. Ensure that the `.env` file is included in the `.dockerignore` file to prevent it from being added to the Docker image.
+
 ## Future tasks
 
 - [ ] Keep recording for future playback and display it on the page somewhere
